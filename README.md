@@ -2,6 +2,10 @@
 
 This is a React Single Page Application that integrates with `macrojuegos.com` API and delivers some extra community features.
 
+## Upcoming Features
+
+You can have a look at the [Morpho D. Web Page project](https://github.com/zebnat/morpho-dimension/projects/1) and see what we will implement in the future.
+
 ## History
 
 Daniel (Zebnat), creator of [danieldev.es](https://danieldev.es/en/) is also the main maintainer and developer of Morpho Dimension. He was employed by Panaworld for 8 years as a FullStack Developer, Product Owner and SEO, working mainly on [macrojuegos.com](https://www.macrojuegos.com/) and taking care of community members.
