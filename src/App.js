@@ -91,7 +91,7 @@ function App() {
                   <Route exact path="/">
                     <Home />
                   </Route>
-                  <Route exact path="/principal">
+                  <Route path="/principal">
                     <MainPage />
                   </Route>
                   <Route path="/acerca-de">
