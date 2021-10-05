@@ -1,17 +1,13 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 
-import doorlock from '../resources/images/doorlock.png'
+import doorlock from '../../resources/images/doorlock.png'
 
-export default function TestModal({title, description, children, }) {
+export default function MorphoKeyRequired({title, description, children, }) {
     let [isOpen, setIsOpen] = useState(true)
 
     function closeModal() {
         setIsOpen(false)
-    }
-
-    function openModal() {
-        setIsOpen(true)
     }
 
     return (
@@ -61,7 +57,7 @@ export default function TestModal({title, description, children, }) {
                                 <div className="mt-2 flex flex-col items-center justify-center">
                                     <Dialog.Description>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            Para acceder a esta página necesitas tener la llave de acceso.
+                                            Para acceder a esta página necesitas tener la llave de acceso. Puedes comprarla en el chat de Twitch de @zebnat
                                         </p>
                                     </Dialog.Description>
                                     <img className="h-40 w-40" src={doorlock} alt="Acceso Denegado" />

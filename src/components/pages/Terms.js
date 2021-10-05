@@ -1,7 +1,7 @@
 import React from 'react'
 import { PageH1, PageH2, PageP, SpreadedLinks } from '../utils/PageDomElements'
 
-export default () => {
+const Terms = () => {
     return (
         <>
             <PageH1>Condiciones del servicio</PageH1>
@@ -22,3 +22,5 @@ export default () => {
         </>
     )
 }
+
+export default Terms

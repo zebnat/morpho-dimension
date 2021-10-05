@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { PageH1, PageH2, PageH3, SpreadedLinks, PageP } from '../utils/PageDomElements';
+import { PageH1 } from '../utils/PageDomElements';
 import butterfly from '../../resources/vid/butterfly.mp4'
 
-export default () => {
+const Home = () => {
     return (
         <>
             <div className="flex flex-col align-center justify-center align-center">
@@ -18,3 +18,5 @@ export default () => {
         </>
     )
 }
+
+export default Home
