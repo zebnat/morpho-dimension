@@ -1,62 +1,64 @@
 import './App.css';
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
-import ScrollToTopButton from './components/ScrollToTopButton';
-import ScrollToTop from './components/ScrollToTop';
+import Layout from './Layout';
 
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
+// context
+import React from 'react'
+
+// pages
 import Home from './components/pages/Home';
 import MainPage from './components/pages/MainPage';
 import Contact from './components/pages/Contact';
 import About from './components/pages/About';
 import Terms from './components/pages/Terms';
-import TestModal from './components/TestModal';
+import Profile from './components/pages/Profile';
+import Login from './components/pages/Login';
 
 function App() {
   return (
-    <>
-      <div className="animatedbg bg-morpho-pattern">
-        <div className="lg:w-3/4 lg:m-auto">
-          <Router>
-            <Header />
-            <ScrollToTop>
-              <Main>
-                {/* Global App Routes */}
-                <Switch>
-                  <Route exact path="/">
-                    <Home />
-                  </Route>
-                  <Route exact path="/principal">
-                    <MainPage />
-                  </Route>
-                  <Route path="/acerca-de">
-                    <About />
-                  </Route>
-                  <Route path="/terminos-de-uso">
-                    <Terms />
-                  </Route>
-                  <Route path="/contacto">
-                    <Contact />
-                  </Route>
-                </Switch>
-              </Main>
-            </ScrollToTop>
-            <Footer>
-              <span>Versión: {process.env.REACT_APP_VERSION}</span>
-            </Footer>
-          </Router>
-        </div>
-      </div>
-      <ScrollToTopButton />
-      <TestModal />
-    </>
+    <Router>
+      {/* Global App Routes */}
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/principal">
+          <Layout>
+            <MainPage />
+          </Layout>
+        </Route>
+        <Route path="/acerca-de">
+          <Layout>
+            <About />
+          </Layout>
+        </Route>
+        <Route path="/terminos-de-uso">
+          <Layout>
+            <Terms />
+          </Layout>
+        </Route>
+        <Route path="/contacto">
+          <Layout>
+            <Contact />
+          </Layout>
+        </Route>
+        <Route path="/login">
+          <Layout>
+            <Login />
+          </Layout>
+        </Route>
+        <Route path="/profile">
+          <Layout>
+            <Profile />
+          </Layout>
+        </Route>
+      </Switch>
+    </Router >
   );
 }
 

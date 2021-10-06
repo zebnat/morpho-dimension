@@ -22,10 +22,10 @@ export const SpreadedLinks = ({ list }) => {
     return (
         <ul className="flex justify-evenly flex-wrap">
             {list.map(({ to, anchor, router }) => router ?
-                <li className="m-2 p-1 rounded bg-purple-500 text-white"><Link to={to}>{anchor}</Link></li> :
-                <li className="m-2 p-1 rounded bg-purple-500 text-white">
+                <li key={to} className="m-2 p-1 rounded bg-purple-500 text-white"><Link to={to}>{anchor}</Link></li> :
+                <li key={to} className="m-2 p-1 rounded bg-purple-500 text-white">
                     {
-                        !to ? anchor : <a href={to} target="_blank" rel="noopener noreferrer">{anchor}</a>
+                        !to ? anchor : <a key={to} href={to} target="_blank" rel="noopener noreferrer">{anchor}</a>
                     }
                 </li>
 

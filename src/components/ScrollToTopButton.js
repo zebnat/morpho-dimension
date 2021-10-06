@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ArrowSmUpIcon } from '@heroicons/react/solid'
 
-export default () => {
+const ScrollToTopButton = () => {
 
     const [visible, setVisible] = useState(false)
 
@@ -33,3 +33,5 @@ export default () => {
     )
 
 }
+
+export default ScrollToTopButton

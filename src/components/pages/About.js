@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { PageH1, PageH2, PageP, SpreadedLinks } from '../utils/PageDomElements'
-export default () => {
+const About = () => {
     return (
         <>
             <PageH1>¡Hola Morpho Dimension!</PageH1>
@@ -26,3 +26,5 @@ export default () => {
         </>
     )
 }
+
+export default About

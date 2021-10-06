@@ -2,7 +2,7 @@ import React from 'react'
 
 import { PageH1, PageH2, PageH3, SpreadedLinks, PageP } from '../utils/PageDomElements';
 
-export default () => {
+const Contact = () => {
     const socialNetworks = [
         {
             to: 'https://www.twitch.tv/zebnat',
@@ -51,3 +51,5 @@ export default () => {
         </>
     )
 }
+
+export default Contact
