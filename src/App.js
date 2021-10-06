@@ -22,33 +22,43 @@ import Login from './components/pages/Login';
 function App() {
   return (
     <Router>
-      <Layout>
-        {/* Global App Routes */}
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/principal">
+      {/* Global App Routes */}
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/principal">
+          <Layout>
             <MainPage />
-          </Route>
-          <Route path="/acerca-de">
+          </Layout>
+        </Route>
+        <Route path="/acerca-de">
+          <Layout>
             <About />
-          </Route>
-          <Route path="/terminos-de-uso">
+          </Layout>
+        </Route>
+        <Route path="/terminos-de-uso">
+          <Layout>
             <Terms />
-          </Route>
-          <Route path="/contacto">
+          </Layout>
+        </Route>
+        <Route path="/contacto">
+          <Layout>
             <Contact />
-          </Route>
-          <Route path="/login">
+          </Layout>
+        </Route>
+        <Route path="/login">
+          <Layout>
             <Login />
-          </Route>
-          <Route path="/profile">
+          </Layout>
+        </Route>
+        <Route path="/profile">
+          <Layout>
             <Profile />
-          </Route>
-        </Switch>
-      </Layout>
-    </Router>
+          </Layout>
+        </Route>
+      </Switch>
+    </Router >
   );
 }
 
