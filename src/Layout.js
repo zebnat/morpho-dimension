@@ -9,14 +9,22 @@ import {
     useHistory
 } from "react-router-dom";
 
-// context
+// Theme Context
+
+
+// User Context
 import { defaultUser, UserContext } from './services/context/UserContext';
-import React, { useReducer, useEffect } from 'react'
+import { defaultTheme, ThemeContext } from './services/context/ThemeContext';
+
+import React, { useReducer, useEffect, useState } from 'react'
 import userReducer from './services/reducers/userReducer';
 import LoginApi from './services/api/login';
 
 function Layout({ children }) {
     const [userState, userDispatch] = useReducer(userReducer, defaultUser);
+
+    const [theme, setTheme] = useState(defaultTheme);
+
     const history = useHistory();
 
     // create login api instance
@@ -66,22 +74,24 @@ function Layout({ children }) {
     }, [userState.isLogged, userState.token])
 
     return (
-        <UserContext.Provider value={{ userState, userDispatch }}>
-            <div className="animatedbg bg-morpho-pattern">
-                <div className="lg:w-3/4 lg:m-auto">
-                    <Header />
-                    <ScrollToTop>
-                        <Main>
-                            {children}
-                        </Main>
-                    </ScrollToTop>
-                    <Footer>
-                        <span>Versión: {process.env.REACT_APP_VERSION}</span>
-                    </Footer>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
+            <UserContext.Provider value={{ userState, userDispatch }}>
+                <div className="animatedbg bg-morpho-pattern">
+                    <div className="lg:w-3/4 lg:m-auto">
+                        <Header />
+                        <ScrollToTop>
+                            <Main>
+                                {children}
+                            </Main>
+                        </ScrollToTop>
+                        <Footer>
+                            <span>Versión: {process.env.REACT_APP_VERSION}</span>
+                        </Footer>
+                    </div>
                 </div>
-            </div>
-            <ScrollToTopButton />
-        </UserContext.Provider>
+                <ScrollToTopButton />
+            </UserContext.Provider>
+        </ThemeContext.Provider>
     );
 }
 
