@@ -16,29 +16,27 @@ const Home = () => {
                 <source src={butterfly} type="video/mp4" />
                 Tu navegador no carga la intro.
             </video>
-            <div className="absolute z-1 flex items-center justify-center h-screen w-screen text-white text-4xl lg:text-7xl p-10 bg-black bg-opacity-50">
+            <div className="absolute z-1 flex items-center justify-center h-screen w-screen text-white text-4xl lg:text-7xl p-10 bg-black bg-opacity-30">
                 {!introDone && <Typewriter
                     onInit={(typewriter) => {
-                        typewriter.typeString('Bienvenido')
+                        typewriter.typeString('Entrando a Morpho Dimension')
                             .callFunction(() => {
                                 console.log('String typed out!');
                             })
-                            .pauseFor(4500)
-                            .typeString(' a.')
-                            .pauseFor(800)
+                            .pauseFor(500)
                             .typeString('.')
                             .pauseFor(800)
+                            .typeString('.')
+                            .pauseFor(1000)
                             .typeString('.')
                             .pauseFor(2500)
-                            .typeString(' Morpho Dimension')
-                            .pauseFor(5000)
                             .callFunction(() => {
                                 setIntroDone(true)
                             })
                             .start();
                     }}
                 />}
-                {introDone && <Link to="/principal"><span className="bg-purple-900 text-white rounded text-black p-4 cursor-pointer">Empezar</span></Link>}
+                {introDone && <Link to="/principal"><span className="bg-white text-black rounded text-black p-4 cursor-pointer">Empezar</span></Link>}
             </div>
 
         </>
