@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { PageH1, PageH2, PageH3, SpreadedLinks, PageP } from '../utils/PageDomElements';
+import { ThemeContext } from '../../services/context/ThemeContext'
 
 const Contact = () => {
+    const { theme } = useContext(ThemeContext)
+
     const socialNetworks = [
         {
             to: 'https://www.twitch.tv/zebnat',
@@ -25,7 +28,7 @@ const Contact = () => {
             router: false
         },
         {
-            to: '', 
+            to: '',
             anchor: 'Discord: Zeb#9503',
             router: false
         },
@@ -37,18 +40,18 @@ const Contact = () => {
     ];
 
     return (
-        <>
+        <div className="">
             <PageH1>Contactar</PageH1>
             <PageH2>Desarrollador principal</PageH2>
             <PageP>Zebnat es la persona que mantiene el proyecto Morpho Dimension, pero a lo mejor en el futuro hay más. Si tienes algún problema o alguna duda severa relacionada con este producto puedes contactar a través de sus redes sociales con él. La respuesta no está garantizada.</PageP>
             <PageH3>Sus redes sociales:</PageH3>
-            <SpreadedLinks list={socialNetworks} />
+            <SpreadedLinks list={socialNetworks} theme={theme.value} />
             <PageH2>¿Programador? ¿Interesado en el proyecto?</PageH2>
             <p className="py-2">Si quieres puedes echar una ojeada al proyecto en github.com y contactar también por esa vía.</p>
             <SpreadedLinks list={[
-                {to: 'https://github.com/zebnat/morpho-dimension', anchor: 'Proyecto Github', router: false}
-            ]} />
-        </>
+                { to: 'https://github.com/zebnat/morpho-dimension', anchor: 'Proyecto Github', router: false }
+            ]} theme={theme.value} />
+        </div>
     )
 }
 

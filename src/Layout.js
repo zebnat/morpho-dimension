@@ -77,7 +77,7 @@ function Layout({ children }) {
         <ThemeContext.Provider value={{ theme, setTheme }}>
             <UserContext.Provider value={{ userState, userDispatch }}>
                 <div className="animatedbg bg-morpho-pattern">
-                    <div className="lg:w-3/4 lg:m-auto">
+                    <div className="md:w-3/4 md:m-auto">
                         <Header />
                         <ScrollToTop>
                             <Main>
@@ -89,7 +89,7 @@ function Layout({ children }) {
                         </Footer>
                     </div>
                 </div>
-                <ScrollToTopButton />
+                <ScrollToTopButton theme={theme.value} />
             </UserContext.Provider>
         </ThemeContext.Provider>
     );

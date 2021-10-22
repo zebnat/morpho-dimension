@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ArrowSmUpIcon } from '@heroicons/react/solid'
 
-const ScrollToTopButton = () => {
+const ScrollToTopButton = ({theme}) => {
 
     const [visible, setVisible] = useState(false)
 
@@ -29,7 +29,7 @@ const ScrollToTopButton = () => {
     }
     
     return (
-        visible && <div className="fixed bottom-20 right-4 h-10 w-10 bg-gray-700 rounded text-white cursor-pointer flex align-center justify-center" onClick={scrollToTop}><ArrowSmUpIcon className="h-10 w-10"/></div>
+        visible && <div className={`fixed bottom-20 right-4 h-10 w-10 bg-secondary_${theme}_4 rounded text-white cursor-pointer flex align-center justify-center`} onClick={scrollToTop}><ArrowSmUpIcon className="h-10 w-10"/></div>
     )
 
 }

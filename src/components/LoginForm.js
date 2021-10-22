@@ -1,5 +1,6 @@
 import React, { useEffect, useContext, useRef, useState } from 'react'
 import { UserContext } from '../services/context/UserContext'
+import { ThemeContext } from '../services/context/ThemeContext'
 import { randomString } from './utils/user'
 import LoginApi from '../services/api/login'
 import { useHistory } from 'react-router-dom'
@@ -10,6 +11,7 @@ const LoginForm = () => {
     const router = useHistory()
 
     const { userState, userDispatch } = useContext(UserContext)
+    const { theme } = useContext(ThemeContext)
     const userInput = useRef();
     const userPass = useRef();
 
@@ -93,22 +95,22 @@ const LoginForm = () => {
     return (
         loading ? <p>Loading...</p> :
             code && state ?
-                <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col" >
+                <div className={`bg-secondary_${theme.value}_1 dark:bg-secondary_${theme.value}_3 drop-shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col`} >
                     <div className="mb-4">
                         <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor="username">
                             Usuario
                         </label>
-                        <input ref={userInput} className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="username" type="text" placeholder="Username" />
+                        <input ref={userInput} className="shadow appearance-none border rounded w-full py-2 px-3 text-black" id="username" type="text" placeholder="Username" />
                     </div>
                     <div className="mb-6">
                         <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor="password">
                             Contraseña
                         </label>
-                        <input ref={userPass} className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" id="password" type="password" placeholder="******************" />
+                        <input ref={userPass} className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-black mb-3" id="password" type="password" placeholder="******************" />
                         <p className="text-red text-xs italic">Escribe tu contraseña.</p>
                     </div>
                     <div className="flex justify-center">
-                        <button onClick={submitLogin} className="bg-purple-900 border-black text-white font-bold py-2 px-4 rounded" type="button">
+                        <button onClick={submitLogin} className={`bg-secondary2_${theme.value} text-white border-black text-white font-bold py-2 px-4 rounded`} type="button">
                             Entrar
                         </button>
                     </div>

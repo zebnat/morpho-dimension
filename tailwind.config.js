@@ -55,11 +55,11 @@ module.exports = {
         secondary2_cherryabby_3: '#7B3BA6',
         secondary2_cherryabby_4: '#671F97',
 
-        complementary_cherryabby: '#CAF36A',
-        complementary_cherryabby_1: '#E9FCBE',
-        complementary_cherryabby_2: '#D9F890',
-        complementary_cherryabby_3: '#B9E949',
-        complementary_cherryabby_4: '#9FD421',
+        complementary_cherryabby: '#A5D92B',
+        complementary_cherryabby_1: '#D0F47B',
+        complementary_cherryabby_2: '#BCEA51',
+        complementary_cherryabby_3: '#83B510',
+        complementary_cherryabby_4: '#658F00',
 
         // MilerTheme
 

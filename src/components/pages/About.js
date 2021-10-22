@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { PageH1, PageH2, PageP, SpreadedLinks } from '../utils/PageDomElements'
+import { ThemeContext } from '../../services/context/ThemeContext'
+
 const About = () => {
+    const { theme } = useContext(ThemeContext)
+
     return (
-        <>
+        <div>
             <PageH1>¡Hola Morpho Dimension!</PageH1>
             <PageP>Este lugar es una especie de mundo paralelo. Te habrás dado cuenta que estás como en una página ligeramente diferente a Macrojuegos.</PageP>
             <PageP>Piensa en ello como si fuese el DLC de un videojuego, una expansión, Addon o Extensión de Macrojuegos 😁.</PageP>
@@ -21,9 +25,9 @@ const About = () => {
             <PageH2>¿Qué puedes hacer tú?</PageH2>
             <PageP>A Zeb le gusta saber qué se cuece en la comunidad. Lo que está bien, lo que está mal, lo que se puede mejorar. Si quieres ayudar a mejorar este servicio puedes simplemente estar activo en todas las redes por las que Zeb está presente o mejor aún, asistir en directo a sus Streamings de Twitch hablando y jugando con él. Puedes visitar si quieres la página de contacto a continuación.</PageP>
             <SpreadedLinks list={[
-                {to: '/contacto', anchor: 'Encuentra a Zeb', router: true}
-            ]} />
-        </>
+                { to: '/contacto', anchor: 'Encuentra a Zeb', router: true }
+            ]} theme={theme.value} />
+        </div>
     )
 }
 

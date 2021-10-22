@@ -25,7 +25,7 @@ const Header = () => {
                             return (
                                 <header className="sticky top-0 z-10">
                                     <nav className={`flex justify-between h-12 px-5 filter drop-shadow-lg items-center bg-primary_${theme.value}_1 dark:bg-primary_${theme.value}_4 dark:text-white`}>
-                                        <div className="flex items-center space-x-4">
+                                        <div className="flex items-center space-x-2 lg:space-x-4">
                                             <Link to={'/'} className="flex items-center justify-start">
                                                 <img className="h-10" width={40} height={40} alt="Morpho Dimension" src="/logo192.png" />
                                                 <h1 className="text-xl lg:text-2xl font-bold cursor-pointer">Morpho D.</h1>
