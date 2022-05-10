@@ -25,3 +25,5 @@ You can manage contributions from other users in the community. To do so, you mu
 ## List of contributor usernames (macrojuegos.com username)
 
 - Splow 
+- Hitori_Kakurenbo
+- alenrivero
