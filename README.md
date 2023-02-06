@@ -1,4 +1,8 @@
-# Morpho Dimension
+# Morpho project is discontinued
+
+This project is no longer maintained by the original maintainer but anyone can still check the code for learning purposes. Thank you!
+
+## Morpho Dimension
 
 This is a React Single Page Application that integrates with `macrojuegos.com` API and delivers some extra community features.
 
